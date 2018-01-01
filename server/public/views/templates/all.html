@@ -1,0 +1,110 @@
+
+<div ng-include="'views/partials/nav.html'"></div>
+
+<div class="allContainer">
+<br>
+<input type="text" placeholder="Search" ng-model="searchText" /><i class="material-icons">search</i>
+<br>
+
+<div layout="row" layout-padding layout-wrap layout-fill>
+
+<!-- needing the weird world.world stuff here because need allWorldIds to contain both the world and the obstacles array -->
+  <div flex-sm="45" flex-md="30" flex-lg="25" flex-gt-lg="20" ng-repeat="world in ac.allWorldIds | filter:searchText | orderBy:'id'" class="boxMain">
+
+    <div layout layout-align="center center">
+      <h4>{{world.world.title}}</h4>
+    </div>
+
+    <!-- <p><span class ="material-icons" title="Attempts">directions_run</span>: {{world.world.attempts}}</p>
+    <p><span class ="material-icons" title="Favorites">star</span>: {{world.favs}}</p>
+    <p><span class ="material-icons" title="Completions">check_circle</span>: {{world.completions}}</p> -->
+    <!-- <p>Best times:</p> -->
+    <!-- <i class="material-icons">radio</i> -->
+
+    <br>
+
+    <canvas class="allCan" height=200 width=270 id="canvas{{world.id}}"></canvas>
+    <!-- id="canvas{{world.id}}" -->
+    <br>
+    <p id="nametag">Weaver: <i>{{world.world.username}}</i></p>
+    <!-- <br> -->
+
+
+    <div class="tableContainer" ng-show="world.completions">
+      <table>
+        <thead>
+          <th>No.</th>
+          <th>Player</th>
+          <th>Time</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="completion in world.compList | orderBy: 'time' | limitTo: 3">
+          <td>{{$index + 1}}</td>
+          <td>{{completion.username}}</td>
+          <td>{{completion.time/10}} sec.</td>
+              <!-- <li>Time: {{completion.time}}</li> -->
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+
+    <div layout="row" layout-padding class="stats" layout layout-align="center center">
+
+      <div flex = "20">
+        <span class ="material-icons" title="Attempts">directions_run</span> {{world.world.attempts}}
+
+      </div>
+      <div flex = "20">
+        <span class ="material-icons" title="Completions">check_circle</span> {{world.completions}}
+
+      </div>
+      <div flex = "20">
+        <span class ="material-icons" title="Favorites">star</span> {{world.favs}}
+
+      </div>
+      <div flex = "20">
+        <button ng-click="ac.playWorld(world)">
+          <!-- PLay -->
+        <!-- <span class ="glyphicon glyphicon-play"></span> -->
+        <span class="material-icons">play_arrow</span>
+      </button>
+      </div>
+      <div flex = "20">
+        <button ng-click="ac.faveWorld(world)" ng-hide="world.isFavorited">
+          <!-- <span class ="glyphicon glyphicon-star-empty"></span> -->
+          <span class="material-icons">star_border</span>
+        </button>
+        <button ng-click="ac.unfavorite(world)" ng-show="world.isFavorited">
+          <!-- <span class ="glyphicon glyphicon-star"></span> -->
+          <span class="material-icons">star</span>
+
+        </button>
+      </div>
+
+
+    </div>
+
+    <!-- <button ng-click="ac.playWorld(world)">
+
+    <span class="material-icons">play_arrow</span>
+  </button>
+
+  &emsp;
+
+    <span>
+      <button ng-click="ac.faveWorld(world)" ng-hide="world.isFavorited">
+        <span class="material-icons">star_border</span>
+      </button>
+      <button ng-click="ac.unfavorite(world)" ng-show="world.isFavorited">
+        <span class="material-icons">star</span>
+
+      </button></span> -->
+
+    <!-- <p ng-show="world.isFavorited">YOU LOVE THIS!</p><br> -->
+
+  </div>
+</div>
+</div>

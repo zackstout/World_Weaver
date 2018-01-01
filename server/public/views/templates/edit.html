@@ -1,0 +1,236 @@
+
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="editContainer">
+
+
+
+<!-- <form ng-submit="pc.addWorld(pc.newWorld)"> -->
+  <!-- <form ng-submit="ec.showWorld()"> -->
+  <!-- Start x: <input type="number" ng-model="pc.newWorld.start_x"> -->
+  <div layout="row">
+    <p><h3 class="head3">Place the cannon:  </h3></p>
+
+      <div flex="40">
+        <div layout="row">
+        <span class="label1">Cannon-x:</span>
+        <div flex="70">
+  <md-slider-container>
+
+        <md-slider flex min="50" max="750" ng-model="ec.newWorld.start_x" aria-label="startx" class="md-primary">
+        </md-slider>
+        <md-input-container>
+          <input flex type="number" ng-model="ec.newWorld.start_x" aria-label="startx" aria-controls="startx-slider">
+        </md-input-container>
+      </md-slider-container></div></div></div>
+  <!-- Start y: <input type="number" ng-model="pc.newWorld.start_y"> -->
+    <div flex="40">
+      <div layout="row">
+      <span class="label1">Cannon-y:</span>
+      <div flex="70">
+
+  <md-slider-container>
+        <md-slider flex min="50" max="550" ng-model="ec.newWorld.start_y" aria-label="starty" class="md-primary">
+        </md-slider>
+        <md-input-container>
+          <input flex type="number" ng-model="ec.newWorld.start_y" aria-label="starty" aria-controls="starty-slider">
+        </md-input-container>
+      </md-slider-container></div></div></div>
+
+    </div>
+  <div layout="row">
+    <p><h3 class="head3">Place the bucket:  </h3></p>
+  <!-- End x: <input type="number" ng-model="pc.newWorld.end_x"> -->
+    <div flex="40">
+      <div layout="row">
+      <span class="label1">Bucket-x:</span>
+      <div flex="70">
+
+  <md-slider-container>
+        <md-slider flex min="50" max="750" ng-model="ec.newWorld.end_x" aria-label="endx" class="md-primary">
+        </md-slider>
+        <md-input-container>
+          <input flex type="number" ng-model="ec.newWorld.end_x" aria-label="endx" aria-controls="endx-slider">
+        </md-input-container>
+      </md-slider-container></div></div></div>
+  <!-- End y: <input type="number" ng-model="pc.newWorld.end_y"> -->
+    <div flex="40">
+      <div layout="row">
+      <span class="label1">Bucket-y:</span>
+      <div flex="70">
+  <md-slider-container>
+        <md-slider flex min="50" max="550" ng-model="ec.newWorld.end_y" aria-label="endy" class="md-primary">
+        </md-slider>
+        <md-input-container>
+          <input flex type="number" ng-model="ec.newWorld.end_y" aria-label="endy" aria-controls="endy-slider">
+        </md-input-container>
+      </md-slider-container></div></div></div>
+    </div>
+<!-- </form> -->
+<br>
+
+<span><h3 class="head3" ng-hide="ec.currentlyEditing">Add an Obstacle:</h3>
+      <h3 class="head3" ng-show="ec.currentlyEditing">Edit an Obstacle:</h3>
+
+<md-button class="md-raised" ng-click="ec.showObstacle()" ng-hide="ec.showObst">New obstacle</md-button>
+</span>
+
+<form ng-submit="ec.addObstacle(ec.newObstacle)" ng-show="ec.showObst">
+<!-- Start x: <input type="number" ng-model="pc.newWorld.start_x"> -->
+<div layout="row">
+  <span class="label1">Obstacle type:</span>
+  <select ng-model="ec.newObstacle.type">
+        <option value="rect">Rectangle</option>
+        <option value="circle">Circle</option>
+
+      </select>
+
+    </div>
+    <br>
+
+    <div layout="row">
+  <div flex="40">
+    <div layout="row">
+    <span class="label1">x-center:</span>
+    <div flex="70">
+
+<md-slider-container>
+      <md-slider flex min="50" max="750" ng-model="ec.newObstacle.x" aria-label="obstx" class="md-primary">
+      </md-slider>
+      <md-input-container>
+        <input flex type="number" ng-model="ec.newObstacle.x" aria-label="obstx" aria-controls="obstx-slider">
+      </md-input-container>
+    </md-slider-container></div></div>
+  </div>
+<!-- Start y: <input type="number" ng-model="pc.newWorld.start_y"> -->
+<div flex="40">
+<div layout="row">
+    <span class="label1">y-center:</span>
+    <div flex="70">
+
+<md-slider-container>
+      <md-slider flex min="50" max="550" ng-model="ec.newObstacle.y" aria-label="obsty" class="md-primary">
+      </md-slider>
+      <md-input-container>
+        <input flex type="number" ng-model="ec.newObstacle.y" aria-label="obsty" aria-controls="obsty-slider">
+      </md-input-container>
+    </md-slider-container></div></div>
+
+  </div>
+</div>
+
+
+<div layout="row">
+<!-- End x: <input type="number" ng-model="pc.newWorld.end_x"> -->
+<div flex="40">
+  <div layout="row">
+  <span  class="label1" ng-show="ec.newObstacle.type == 'rect'">Height:</span>
+  <span  class="label1" ng-show="ec.newObstacle.type == 'circle'">Radius:</span>
+  <div flex="70">
+
+<md-slider-container>
+
+      <md-slider flex min="50" max="750" ng-model="ec.newObstacle.h" aria-label="obsth" class="md-primary">
+      </md-slider>
+      <md-input-container>
+        <input flex type="number" ng-model="ec.newObstacle.h" aria-label="obsth" aria-controls="obsth-slider">
+      </md-input-container>
+    </md-slider-container></div></div>
+  </div>
+<!-- End y: <input type="number" ng-model="pc.newWorld.end_y"> -->
+<div flex="40">
+<div layout="row">
+  <span class="label1" ng-show="ec.newObstacle.type == 'rect'">Width:</span>
+
+<div flex="70">
+<md-slider-container ng-show="ec.newObstacle.type == 'rect'">
+      <md-slider flex min="50" max="550" ng-model="ec.newObstacle.w" aria-label="obstw" class="md-primary">
+      </md-slider>
+      <md-input-container>
+        <input flex type="number" ng-model="ec.newObstacle.w" aria-label="obstw" aria-controls="obstw-slider">
+      </md-input-container>
+    </md-slider-container></div></div>
+
+  </div>
+</div>
+<div layout="row">
+  <div flex="30">
+            <div layout="row"><span class="label1" ng-show="ec.newObstacle.type == 'rect'">Angle:</span>
+              <div flex="70">
+
+    <md-slider-container ng-show="ec.newObstacle.type == 'rect'">
+
+          <md-slider flex min="0" max="360" ng-model="ec.newObstacle.a" aria-label="obsta" class="md-primary">
+          </md-slider>
+          <md-input-container>
+            <input flex type="number" ng-model="ec.newObstacle.a" aria-label="obsta" aria-controls="obsta-slider">
+          </md-input-container>
+        </md-slider-container></div></div>
+  </div>
+
+  </div>
+<input type="submit">
+</form>
+
+<!-- <md-button class="md-raised" ng-show="ec.currentlyEditing" ng-click="ec.deleteObstacle(ec.newObstacle)">Delete</md-button> -->
+
+
+<br><br>
+
+
+  <canvas id="hi" height="600px" width="800px"></canvas>
+
+
+  <br><br>
+  <md-button class = "md-raised" ng-click="ec.editObstacle()">Edit an obstacle</md-button>
+
+    <br>
+  <span><h3 class="head3">Add a Portal Pair: </h3>
+  <md-button class="md-raised" ng-click="ec.showPortal()" ng-hide="ec.isNewPortal">New Portal</md-button></span>
+
+  <form ng-show="ec.isNewPortal" ng-submit="ec.addPortal(ec.newPortal)">
+    <div layout="row">
+      <div flex="40">
+        <div layout="row">
+          <span class="label1">FIRST:</span>
+        <div flex="70">
+
+        <md-slider-container>
+              <md-slider flex min="30" max="570" ng-model="ec.newPortal.y1" aria-label="port1" class="md-primary">
+              </md-slider>
+              <md-input-container>
+                <input flex type="number" ng-model="ec.newPortal.y1" aria-label="port1" aria-controls="port1-slider">
+              </md-input-container>
+            </md-slider-container></div></div></div>
+
+        <div flex="40">
+          <div layout="row">
+            <span class="label1">SECOND:</span>
+          <div flex="70">
+        <md-slider-container>
+              <md-slider flex min="30" max="570" ng-model="ec.newPortal.y2" aria-label="port2" class="md-primary">
+              </md-slider>
+              <md-input-container>
+                <input flex type="number" ng-model="ec.newPortal.y2" aria-label="port2" aria-controls="port2-slider">
+              </md-input-container>
+            </md-slider-container></div></div></div>
+          </div>
+
+            <input type="submit">
+
+
+  </form>
+
+  <div layout="row" layout-padding layout-fill>
+
+  <div flex="50">
+    <md-button class="md-primary md-raised" ng-click="ec.titleWorld($event)">Post World</md-button>
+
+  </div>
+  <div flex="50">
+    <md-button class="md-primary md-raised" ng-click="ec.saveWorld(ec.newWorld)">Save for Later</md-button>
+
+  </div>
+  </div>
+
+
+</div>

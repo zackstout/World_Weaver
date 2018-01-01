@@ -1,0 +1,23 @@
+
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container" id="canvasHolder">
+  <p>
+    In playing, origin: {{pc.origin}}
+    <!-- <button ng-click="pc.capture()">Capture!</button>
+    <screenshot is-open="pc.yes" target="pc.realvassin">
+
+    </screenshot> -->
+  </p>
+
+  <!-- <button ng-click="pc.reset()">Reset</button> -->
+  <br><br>
+  <button ng-click="pc.goHome()">Give up</button>
+  <br><br>
+
+<div ng-hide="pc.done">
+  TIME: {{pc.now}}
+</div>
+  <br><br>
+  SHOTS: {{pc.count}}
+  <br><br>
+</div>

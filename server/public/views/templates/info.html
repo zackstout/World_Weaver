@@ -1,0 +1,75 @@
+
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+  <h2>
+    MY PROFILE:
+
+  </h2>
+
+  <input type="text" placeholder="Search" ng-model="searchText" />
+
+  <h4>Worlds I've Made:</h4>
+  
+
+  <button ng-click="ic.getWorlds()">Get 'em!</button>
+  <br>
+  <div layout="row" layout-padding layout-wrap layout-fill>
+
+    <div flex-sm="45" flex-md="30" flex-lg="25" flex-gt-lg="20" ng-repeat="world in ic.worldIds | filter:searchText | orderBy: 'id'" class="myBox">
+      <div layout layout-align="center center"><h4>{{world.title}}</h4></div>
+      <!-- <p>Cannon: ({{world.start_x}}, {{world.start_y}})</p>
+      <p>Bucket: ({{world.end_x}}, {{world.end_y}})</p> -->
+
+      <!-- <p>Best times:</p> -->
+
+      <canvas class="mineCan" height=200 width=270 id="mine{{world.id}}"></canvas>
+
+      <div layout="row" class="stats">
+        <span class ="material-icons" title="Attempts">directions_run</span> {{world.attempts}}
+        &emsp;&emsp;&emsp;&emsp;
+        <span class ="material-icons" title="Completions">check_circle</span> {{world.completions}}
+        &emsp;&emsp;&emsp;&emsp;
+        <span class ="material-icons" title="Favorites">star</span> {{world.favs}}
+      </div>
+
+      <br>
+      <button ng-click="ic.play2World(world)"><span class ="material-icons" title="Play">play_arrow</span></button>
+      &emsp;&emsp;<button ng-click="ic.editWorld(world)"><span class ="material-icons" title="Edit">mode_edit</span></button>
+      &emsp;&emsp;<button ng-click="delWorld()"><span class ="material-icons" title="Delete">delete</span></button>
+
+
+
+      <!-- {{world}} -->
+    </div>
+  </div>
+  <br>
+
+  <h4>My Favorite Worlds:</h4>
+
+  <button ng-click="ic.getFaves()">Get 'em!</button>
+  <br>
+  <div layout="row" layout-padding layout-wrap layout-fill>
+
+  <div flex-sm="45" flex-md="30" flex-lg="25" flex-gt-lg="20" ng-repeat="fave in ic.faveIds | filter:searchText | orderBy: 'id'" class="favBox col-md-3 col-lg-3">
+    <p>Title: {{fave.title}}, {{fave.id}}</p>
+    <!-- <p>Cannon: ({{fave.start_x}}, {{fave.start_y}})</p>
+    <p>Bucket: ({{fave.end_x}}, {{fave.end_y}})</p> -->
+    <p><span class ="material-icons" title="Attempts">directions_run</span>: {{fave.attempts}}</p>
+    <p><span class ="material-icons" title="Completions">check_circle</span>: {{fave.completions}} </p>
+    <p>My best time:</p>
+
+    <canvas height=200 width=270 id="fav{{fave.id}}"></canvas>
+
+
+    <p></p>
+    <button ng-click="ic.play3World(fave)"><span class ="material-icons" title="Play">play_arrow</span></button>
+    <button ng-click="ic.unfavorite(fave)"><span class ="material-icons" title="Unfavorite">star</span></button>
+
+  </div>
+</div>
+
+
+  <h4>My History:</h4>
+
+
+</div>

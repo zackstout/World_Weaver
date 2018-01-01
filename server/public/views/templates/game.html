@@ -1,0 +1,114 @@
+
+<div ng-include="'views/partials/nav.html'"></div>
+
+<div class=" gameContainer">
+
+<br><br><br>
+  <div class="gameNav" >
+
+    <div layout layout-align="center center">
+      <md-button class="md-primary md-raised" ng-click="gc.play(1)">
+        LEVEL 1
+      </md-button>
+    </div>
+
+  <br>
+  <div layout layout-align="center center">
+  <md-button ng-hide="gc.TwoComp" class=" md-raised" ng-click="uc.go('/game')">
+    LEVEL 2
+  </md-button>
+
+</div>
+
+<div layout layout-align="center center">
+<md-button ng-show="gc.TwoComp" class="md-primary md-raised" ng-click="gc.play(2)">
+  LEVEL 2
+</md-button>
+
+</div>
+
+<div layout layout-align="center center">
+<md-button ng-hide="gc.ThreeComp" class=" md-raised" ng-click="uc.go('/game')">
+  LEVEL 3
+</md-button>
+
+</div>
+
+<div layout layout-align="center center">
+<md-button ng-show="gc.ThreeComp" class="md-primary md-raised" ng-click="gc.play(3)">
+  LEVEL 3
+</md-button>
+
+</div>
+
+<!--
+  <br>
+  <div layout layout-align="center center">
+
+  <md-button ng-class="gc.addClass2" class="md-raised" ng-click="gc.changeClass()">
+    LEVEL 3
+  </md-button>
+</div>
+  <br>
+  <div layout layout-align="center center">
+
+  <md-button ng-class="gc.addClass3" class="md-raised" ng-click="uc.go('/game')">
+    LEVEL 4
+  </md-button>
+</div>
+  <br>
+  <div layout layout-align="center center">
+
+  <md-button ng-class="gc.addClass4" class="md-raised" ng-click="uc.go('/game')">
+    LEVEL 5
+  </md-button>
+</div> -->
+
+</div>
+
+
+
+
+<!--
+<div class="gameNav" flex="40">
+
+  <div class="level-container" layout layout-align="center center">
+
+    <div class="level-btn" layout layout-align="center center">
+      <button class="level-btn2">LEVEL 1</button>
+    </div>
+  </div>
+
+  <br><br>
+  <div class="level-container">
+    <div class="level-btn">
+      <button class="level-btn2">LEVEL 2</button>
+    </div>
+  </div>
+
+  <br><br>
+  <div class="level-container">
+    <div class="level-btn">
+      <button class="level-btn2">LEVEL 3</button>
+    </div>
+  </div>
+
+  <br><br>
+  <div class="level-container">
+    <div class="level-btn">
+      <button class="level-btn2">LEVEL 4</button>
+    </div>
+  </div>
+
+  <br><br>
+  <div class="level-container">
+    <div class="level-btn">
+      <button class="level-btn2">LEVEL 5</button>
+    </div>
+  </div>
+</div> -->
+
+  <br><br>
+
+
+</div>
