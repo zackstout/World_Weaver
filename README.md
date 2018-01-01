@@ -31,7 +31,7 @@ Database visualization:
 
 ![footprint_database2](https://user-images.githubusercontent.com/29472568/33974430-f21984bc-e04d-11e7-95da-2b38f5703602.png)
 
-## Screen Shot
+## Screenshots
 
 The editing screen:
 
@@ -80,10 +80,6 @@ Link to a read-only version of my scope: https://docs.google.com/document/d/1_7B
 - [ ] Let users add oscillating obstacles to their worlds.
 - [ ] Give users the option to make the target/bucket oscillate or move along some path.
 - [ ] Implement magnets (treating cannonballs as electrons).
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Authors
 
