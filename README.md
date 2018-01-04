@@ -50,7 +50,8 @@ The selection screen:
 
 ## Documentation
 
-Link to a read-only version of my scope: https://docs.google.com/document/d/1_7BCfpZBIYsvJ4YVFDtsLRTdOGjQnYGGFSxE2ExGnUI/edit?usp=sharing
+- Link to a read-only version of [my scope](https://docs.google.com/document/d/1_7BCfpZBIYsvJ4YVFDtsLRTdOGjQnYGGFSxE2ExGnUI/edit?usp=sharing)
+- Link to a [repository](https://github.com/zackstout/world-weaver) that contains all the commits for this project
 
 
 ### Completed Features
@@ -81,7 +82,7 @@ Link to a read-only version of my scope: https://docs.google.com/document/d/1_7B
 - [ ] Give users the option to make the target/bucket oscillate or move along some path.
 - [ ] Implement magnets (treating cannonballs as electrons).
 
-## Authors
+## Author
 
 * Zack Stout
 
